@@ -1,0 +1,120 @@
+.categories {
+    margin: 70px 0;
+}
+.tops img, .bottoms img, .shoes img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border: black solid 2px;;
+}
+.tops,.bottoms, .shoes {
+    margin-bottom: 30px; 
+    min-width: 250px;
+    display: flex;
+    gap: 20px;
+    padding-left: auto;
+}
+h1 {
+    text-align: center;
+    background-color: darkmagenta;
+    font-size: xx-large;
+}
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+} 
+.add-to-cart {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 16px;
+    background-color: chocolate;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+}
+.old-price {
+    text-decoration: line-through;
+} 
+
+.container {
+  position: relative;
+}
+.container {
+  position: relative;
+  width: 100%; 
+}
+
+.container img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  border-radius: 10px; /* Optional */
+}
+
+/* Position the "Sale" label */
+.Sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.product-title, .product-price {
+  margin-top: 8px;
+  text-align: center;
+}
+.product-card:hover {
+  transform: scale(1.02);
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: darkmagenta;
+   color: rgb(218, 134, 211);
+   text-align: center;
+}
+/* Default: Small Devices (600px and up) — 1 product per row */
+.tops, .bottoms, .shoes {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Medium Devices (≥768px) — 2 products per row */
+@media (min-width: 768px) {
+    .product-card {
+        flex: 1 1 48%;
+        max-width: 48%;
+    }
+}
+
+/* Large Devices (≥992px) — 4 products per row */
+@media (min-width: 992px) {
+    .product-card {
+        flex: 1 1 23%;
+        max-width: 23%;
+    }
+}
+
+/* Extra Large Devices (≥1200px) — 6 products per row */
+@media (min-width: 1200px) {
+    .product-card {
+        flex: 1 1 15%;
+        max-width: 15%;
+    }
+}
