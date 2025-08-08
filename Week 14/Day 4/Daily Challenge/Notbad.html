@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sentence = "The movie is not that bad, I like it"
+
+        let wordNot = sentence.indexOf("not");
+        console.log(wordNot);
+
+        let wordBad = sentence.indexOf("bad");
+        console.log(wordBad);
+
+        if((wordBad > wordNot) && (wordBad > -1) && (wordNot > -1))
+        {
+            let fromNotToBad = sentence.slice(wordNot, wordBad + 3);
+            console.log(fromNotToBad);
+
+            let replacedSentence = sentence.replace(fromNotToBad, "good");
+            console.log(replacedSentence);
+        }
+        else
+        {
+            console.log(sentence);
+        }
+
+    </script>
+</body>
+</html>
