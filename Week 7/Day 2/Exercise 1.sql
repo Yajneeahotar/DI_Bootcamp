@@ -38,10 +38,11 @@ Customer_id SERIAL PRIMARY KEY,
 "First Name" TEXT,
 "Last Name" TEXT
 )
+
 ALTER TABLE customers
-RENAME COLUMN "Last Name" to last_name;
+RENAME COLUMN "First Name" to First_Name;
 ALTER TABLE customers
-RENAME COLUMN "First Name" to first_name;
+RENAME COLUMN "Last Name" to Last_Name;
 
 INSERT INTO customers (first_name,last_name)
 VALUES ('Greg', 'Jones')
@@ -66,16 +67,6 @@ SELECT * FROM items WHERE (Price<300)
 
 SELECT * FROM customers WHERE (last_name='Smith')
 SELECT * FROM customers WHERE (last_name='Jones')
-SELECT * FROM customers WHERE (first_name<>'Scott')
+SELECT * FROM customers WHERE ("First Name"<>'Scott')
 
---test
-INSERT INTO items (Description,Price)
-VALUES ('Small Desk', 200)
-
-SELECT 
- description, sum(price)
-FROM 
-   items
-GROUP BY 
-   description
-   
+SELECT "First Name" FROM customers WHERE ("Last Name"='Smith')

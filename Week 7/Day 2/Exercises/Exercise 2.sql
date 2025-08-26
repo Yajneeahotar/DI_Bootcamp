@@ -38,7 +38,10 @@ VALUES ('Grez', 'David', '2003-06-14' )
 INSERT INTO students (last_name, first_name,birth_date)
 VALUES ('Simpson', 'Omer', '1980-10-03' )
 
-
+--test
+INSERT INTO students (last_name, first_name,birth_date)
+VALUES ('Simpson', 'Omer', '1980-10-03' )
+--test
 
 SELECT * FROM students
 SELECT first_name, last_name FROM students
@@ -53,3 +56,10 @@ SELECT * from students where SUBSTRING (first_name, LENGTH(first_name) - 1 , 1) 
 SELECT first_name, last_name FROM students WHERE student_id IN (1, 3)
 SELECT * FROM students WHERE birth_date >= '2000-01-01'
 
+
+--test
+SELECT DISTINCT first_name FROM students;
+SELECT * FROM students
+SELECT * FROM students WHERE first_name in ('Marc','David');
+SELECT * FROM students WHERE first_name not in ('Marc','David');
+SELECT * FROM students WHERE birth_date between '1980-10-03' and '2000-01-01';
