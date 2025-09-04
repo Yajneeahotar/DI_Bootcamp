@@ -35,24 +35,3 @@ function onDrop(event)
 
 
 
-
-
-
-
-/*function onDragStart(event)
-{
-    console.log("dragstart");
-}
-function onDrop(event)
-{
-    event.preventDefault();
-    let imageDrop = document.getElementById('target');
-    console.log(imageDrop);
-    imageDrop.innerText = "Image Dropped";
-    console.log("ondrag");
-}
-function dragoverHandler(event)
-{
-    event.preventDefault();
-    console.log("dragover");
-}*/
