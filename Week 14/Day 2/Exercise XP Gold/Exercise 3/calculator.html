@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        //Prompt the user for the first number.
+        //Store the first number in a variable called num1.
+        let num1 = prompt("Enter the first number:");
+        console.log("the first number is " + num1);
+        console.log(typeof num1);
+        num1 = Number(num1); // Convert the input from string to a number
+        console.log(typeof num1);
+
+        //Prompt the user for the second number.
+        //Store the second number in a variable called num2.
+        let num2 = prompt("Enter the second number:");
+        console.log("the second number is " + num1);
+        console.log(typeof num2);
+        num2 = Number(num2);
+        console.log(typeof num2);
+
+        //Create an Alert where the value is the SUM of num1 and num2.
+        let sum = alert("The sum is: " + (num1 + num2));
+
+        //BONUS: Make a program that can subtract, multiply, and also divide!
+        let subtract = alert("The subtraction is: " + (num1 - num2));
+        let multiply = alert("The multiplication is: " + (num1 * num2));
+        let divide = alert("The division is: " + (num1 / num2));
+
+    </script>
+</body>
+</html>
