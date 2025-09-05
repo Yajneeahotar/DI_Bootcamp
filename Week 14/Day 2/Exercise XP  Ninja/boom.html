@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boom</title>
+</head>
+<body>
+    <script>
+        //Prompt the user for a number.
+        let userNumber = Number(prompt('Enter a number'));
+        let text = 'o';
+        let userNumber2 = '';
+        console.log('User number is: ' + userNumber);
+
+        //If the number given is less than 2 : return “boom”
+        if(userNumber < 2)
+        {
+            userNumber2 = 'boom';
+        }
+        else
+        {
+            userNumber2 = ('B' + text.repeat(userNumber) + 'm');
+            //console.log(userNumber2);
+        }
+        
+        if(userNumber % 2 == 0)
+        {
+            userNumber2 = userNumber2 + '!';
+        }
+        if(userNumber % 5 == 0)
+        {
+           userNumber2 = (userNumber2.toUpperCase());
+        }
+        console.log(userNumber2);
+        
+
+
+    </script>
+</body>
+</html>
