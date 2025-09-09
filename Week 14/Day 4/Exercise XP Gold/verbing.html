@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verbing</title>
+</head>
+<body>
+    <script>
+       //Prompt the user for a string. It must be a verb.
+       let userVerb = prompt('Hello, please enter a verb');
+
+       if(userVerb.length >= 3 && userVerb.endsWith('ing') == false)
+       {
+            console.log(userVerb + 'ing');
+       }
+       else if(userVerb.length >= 3 && userVerb.endsWith('ing'))
+       {
+            console.log(userVerb + 'ly');
+       }
+       else
+       {
+            console.log(userVerb);
+       }
+    </script>
+</body>
+</html>
