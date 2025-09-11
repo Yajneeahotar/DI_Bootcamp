@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested functions</title>
+</head>
+<body>
+    <script>
+        let landscape = function() 
+        {
+            let result = "";
+
+            let flat = function(x) 
+            {
+                for(let count = 0; count < x; count++)
+                {
+                    result = result + "_";
+                    //1st iteration, count = 0 - result = '_'
+                    //2nd iteration, count = 1 - result = '__'
+                    //3rd iteration, count = 2 - result = '___'
+                    //4th iteration, count = 3 - result = '____'
+                }
+            }
+
+            let mountain = function(x) 
+            {
+                result = result + "/" //result = '____/'
+
+                for(let counter = 0; counter < x; counter++)
+                {
+                    result = result + "'";
+                    //1st iteration, counter = 0 - result = '____/' '
+                    //2nd iteration, counter = 1 - result = '____/'' '
+                    //3rd iteration, counter = 2 - result = '____/''' '
+                    //4th iteration, counter = 3 - result = '____/'''' '
+                }
+
+                result = result + "\\" //result = '____/''''\\'
+            }
+
+            flat(4);
+            mountain(4);
+            flat(4)
+
+            return result; //result = '____/''''\\____'
+        }
+
+        console.log(landscape());
+
+    </script>
+</body>
+</html>
