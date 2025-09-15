@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Wildcats</title>
+</head>
+<body>
+    <script>
+        const gameInfo = [
+                            {
+                            username: "john",
+                            team: "red",
+                            score: 5,
+                            items: ["ball", "book", "pen"]
+                            },
+
+                            {
+                            username: "becky",
+                            team: "blue",
+                            score: 10,
+                            items: ["tape", "backpack", "pen"]
+                            },
+
+                            {
+                            username: "susy",
+                            team: "red",
+                            score: 55,
+                            items: ["ball", "eraser", "pen"]
+                            },
+
+                            {
+                            username: "tyson",
+                            team: "green",
+                            score: 1,
+                            items: ["book", "pen"]
+                            },
+                        ];
+                        
+        let userName = "";
+        let newArray = [];
+        let winners =[];
+        let totalUserScore = 0;
+
+        gameInfo.forEach((playerDetails, i, arr) =>  
+                            {
+                                //Create an array using forEach that contains all the usernames from the gameInfo array, 
+                                // add an exclamation point (ie. “!”) to the end of every username.
+
+                                userName = playerDetails.username;
+                                newArray.push(userName + '!');
+
+                                //Create an array using forEach that contains the usernames of all players with a score bigger than 5.
+
+                                if(playerDetails.score > 5)
+                                {
+                                    winners.push(playerDetails.username);
+                                }
+
+                                // Find and display the total score of the users. (Hint: The total score is 71)
+
+                                totalUserScore += playerDetails.score;
+                            }   
+                        )
+        console.log(newArray);
+        console.log(winners);
+        console.log(totalUserScore);
+    </script>
+</body>
+</html>
