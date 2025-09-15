@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        // #1
+        /*function funcOne() 
+        {
+            let a = 5;
+            if(a > 1) 
+            {
+                a = 3;
+            }
+            alert(`inside the funcOne function ${a}`); //alert("inside the funcOne function " + a);
+        } 
+
+        // #1.1 - run in the console:
+        funcOne() //a = 3, since a has been declared within the function scope(outside the if)
+        // #1.2 What will happen if the variable is declare with const instead of let ? Error 
+
+
+        let a = 0;
+        function funcTwo() 
+        {
+        a = 5;
+        }
+
+        function funcThree() 
+        {
+            console.log(`inside the funcThree function ${a}`);
+        }
+
+        // #2.1 - run in the console:
+        funcThree() //inside the funcThree function 0
+        funcTwo() //in this function value of variable a changes from 0 to 5.
+        funcThree() //inside the funcThree function 5
+        //variable a has been declared outside the functions' scope - it is therefore accessible anywhere below the variable declaration
+        // #2.2 What will happen if the variable is declared with const instead of let ? error 
+
+
+        //#3
+        function funcFour() 
+        {
+            window.a = "hello";
+        }
+
+
+        function funcFive() 
+        {
+            alert(`inside the funcFive function ${a}`);
+        }
+
+        // #3.1 - run in the console:
+        
+        funcFour() 
+        funcFive() 
+        //the value of variable a doesnt change
+        //#4
+        const a = 1;
+        function funcSix() 
+        {
+            const a = "test";
+            alert(`inside the funcSix function ${a}`); //inside the funcSix function test
+        }
+        // #4.1 - run in the console:
+        funcSix() //error as variable a has already been declared
+        // #4.2 What will happen if the variable is declared  with const instead of let ? //error as variable a has already been declared
+        */
+        //#5
+        let a = 2;
+        if (true) 
+        {
+            let a = 5;
+            alert(`in the if block ${a}`); // in the if block 5
+        }
+        alert(`outside of the if block ${a}`); // outside of the if block 2
+
+        // #5.1 - run the code in the console
+        // #5.2 What will happen if the variable is declared with const instead of let ?
+        // in the if block 5
+        // outside of the if block 2
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it a string ?</title>
+</head>
+<body>
+    <script>
+        function isString(value)
+        {
+           /* if(typeof(value) == 'string')
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }*/
+            return (typeof(value) == 'string') ? true : false;
+        }       
+        let isString = (value) => (typeof(value) == 'string') ? true : false;
+
+        console.log(isString('hello')); 
+        console.log(isString([1, 2, 4, 0]));
+        console.log(isString(14));
+
+    </script>
+</body>
+</html>
