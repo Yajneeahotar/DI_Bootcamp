@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+</head>
+<body>
+    <script>
+        //Create a self invoking function that takes 4 arguments: 
+        // number of children, partner’s name, geographic location, job title.
+        //The function should display in the DOM a sentence like 
+        // "You will be a <job title> in <geographic location>, 
+        // and married to <partner's name> with <number of children> kids."
+
+        (function(numberOfChildren, partnersName, geographicLocation, jobTitle)
+            {
+              let body = document.getElementsByTagName('body');      
+              let newPara = document.createElement('p');
+              body[0].appendChild(newPara).innerHTML = "You will be a " + jobTitle + " in " + geographicLocation + ", " + "and married to " + partnersName + " with " + numberOfChildren + " kids."; 
+            }    
+        )
+        (2, 'John', 'Mauritius', 'doctor')
+
+        
+
+    </script>
+</body>
+</html>

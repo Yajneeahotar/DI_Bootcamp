@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Bar</title>
+</head>
+<body>
+    <script>
+        function makeJuice(beverageSize)
+        {
+            let ingredients = [];
+            ingredients.push(addIngredients);
+            console.log(ingredients);
+
+            function addIngredients(firstIngredient, secondIngredient, thirdIngredient)
+            {
+                let newPara = document.createElement('p');
+                let body = document.getElementsByTagName('body'); 
+                body[0].appendChild(newPara).innerHTML = ("The client wants a " + beverageSize + " juice, containing " +  firstIngredient + ", " + secondIngredient + ", " + thirdIngredient);
+            }
+
+            function displayJuice()
+            {
+                addIngredients('lemon', 'sugar', 'mint');
+            }
+            addIngredients('lemon', 'sugar', 'mint');
+            addIngredients('apple', 'pineapple', 'orange');
+            displayJuice()
+        }
+        makeJuice('medium');
+    </script>
+</body>
+</html>

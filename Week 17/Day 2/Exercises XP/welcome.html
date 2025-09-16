@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Welcome</title>
+    <style>
+        .profile-picture-style 
+        {
+            max-width: 20%;
+            max-height: 20%;
+            display: block; /* Remove extra space below image */
+            border-radius: 50%; /* For a circular profile picture */
+        }
+
+    </style>
+</head>
+<body>
+   <nav class="navbar bg-primary" data-bs-theme="dark">
+    <!--img src = 'Johnprofile.jpg'-->
+</nav>
+
+
+    <script>
+        (function(userName)
+            {
+                let navTag = document.getElementsByTagName('nav');      
+                let newDiv = document.createElement('div');
+                navTag[0].appendChild(newDiv).innerHTML = userName;
+
+                let profileImage = document.createElement('img');
+                profileImage.src ='Johnprofile.jpg';
+                profileImage.classList.add('profile-picture-style');
+                newDiv.appendChild(profileImage);
+                
+            }   
+        )
+        ('John')
+
+
+
+    </script>
+</body>
+</html>
