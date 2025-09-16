@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a function that receives a weight in kilograms and returns it in grams. (Hint: 1 kg is 1000gr)
+        //First, use function declaration and invoke it.
+
+        console.log(weight(5));
+
+        function weight(kg)
+        {
+            return kg * 1000;
+        }
+        
+        //Then, use function expression and invoke it.
+        let totalWeight = function(kg)
+        {
+            return kg * 1000;
+        }
+        console.log(totalWeight(10));
+
+        //Write in a one line comment, the difference between function declaration and function expression.
+        // Function declarations are "hoisted" to the top of their containing scope. 
+        // This means they can be called before their actual definition in the code.
+        // For function expressions, The variable to which the function is assigned is hoisted, but the function's definition itself is not. 
+        // Therefore, function expressions cannot be called before they are defined in the code.
+
+        //Finally, use a one line arrow function and invoke it.
+        let weightTotal = (kg) => kg * 1000;
+        console.log(weightTotal(7));
+    </script>
+    
+</body>
+</html>
