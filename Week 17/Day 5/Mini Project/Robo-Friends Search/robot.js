@@ -84,58 +84,54 @@
     //creating a div tag for the robots
     let body = document.getElementsByTagName('body')
     let robot = document.createElement('div');
+
+    //setting a class and appending the robot div to the HTML body
     robot.setAttribute('class', 'robot-class-main');
     body[0].appendChild(robot);
 
-    //loop to create a sub div for the robot name and email
     let mainDivClass = document.getElementsByClassName('robot-class-main');
-    function robotGenerator(name, email)
+
+    //A function to create 10 div for each robot - containing the name, image and email
+    function robotGenerator(name, email, image)
     {
         let robotDiv = document.createElement('div');
         robotDiv.setAttribute('class', 'robot-class-individual');
         mainDivClass[0].appendChild(robotDiv);
 
+        let robotImage = document.createElement('img');
+        robotImage.setAttribute('src', image);
+        robotDiv.appendChild(robotImage);
+
         let h3 = document.createElement('h3');
-       // h3.innerHTML = robots[i].name;
-          h3.innerHTML = name;
+        h3.innerHTML = name;
         robotDiv.appendChild(h3);
 
         let h4 = document.createElement('h4');
-        //h4.innerHTML = robots[i].email;
-          h4.innerHTML = email;
+        h4.innerHTML = email;
         robotDiv.appendChild(h4);
     }
 
+    //A loop to display all the names, emails and images of the robots
     for(i = 0; i < robots.length; i++)
     {
-       robotGenerator(robots[i].name, robots[i].email);
+       robotGenerator(robots[i].name, robots[i].email, robots[i].image);
     }
 
     //creating an event listener - on input in the search bar
-    let searchBar = document.getElementsByClassName('form-control me-2');
+    let searchBar = document.getElementsByClassName("search-bar");
     searchBar[0].addEventListener('input', searchBarInput);
 
+    //An event listener so that on input in the search bar, the robots are being filtered according to the input string
     function searchBarInput(event)
     {
         mainDivClass[0].innerHTML = "";
-        //console.log(event.target.value);
+
+        //A loop that iterates on each robot to check whether the input string matches with the robot name
         for(let i = 0; i < robots.length; i++)
         {
-           // console.log(robots[i].name)
             if(robots[i].name.includes(event.target.value, 0))
             {
-                /*let robotDiv = document.createElement('div');
-                robotDiv.setAttribute('class', 'robot-class-individual');
-                mainDivClass[0].appendChild(robotDiv);
-
-                let h3 = document.createElement('h3');
-                h3.innerHTML = robots[i].name;
-                robotDiv.appendChild(h3);
-
-                let h4 = document.createElement('h4');
-                h4.innerHTML = robots[i].email;
-                robotDiv.appendChild(h4);*/
-                robotGenerator(robots[i].name, robots[i].email);
+                robotGenerator(robots[i].name, robots[i].email, robots[i].image);
             }
         }
     }

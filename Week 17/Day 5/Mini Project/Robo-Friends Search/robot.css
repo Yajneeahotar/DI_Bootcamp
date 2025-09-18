@@ -1,12 +1,86 @@
 body 
 {
     background-image: url(backgroundimage.png);
-    background-color: aqua; 
+    background-color: rgb(138, 255, 255); 
 }
 
 .robot-class-individual
 {
     border: 2px solid;
     border-color: black;
-    padding: 5px;
+    padding: 10px;    
 }
+
+a
+{
+    font-family: 'SEGA LOGO FONT', sans-serif;
+}
+
+input
+{
+    margin-left: 500px ;
+    max-width: 500px;
+}
+
+.navbar 
+{
+    display: flex;
+    align-items: center;
+    background-color: #13be22;
+    padding: 20px;
+}
+
+.container-fluid 
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-brand 
+{
+    font-family: 'SEGA LOGO FONT', sans-serif;
+    font-size: 2rem;
+    color: black;
+}
+
+.search-bar 
+{
+    width: 400px;
+    height: 40px;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.robot-class-individual img 
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 50px;
+    border: 2px solid black;
+    background: none;
+    object-fit: cover;
+    background-color: rgb(65, 54, 54);
+   
+}
+
+.robot-class-main
+{
+    display: grid;
+    grid-template-columns: repeat(3, 4fr)
+}
+
+.robot-class-individual 
+{
+    border: 2px solid black;
+    padding: 10px;
+    margin: 16px; /* adds space around each card */
+    background-color: rgb(22, 162, 226);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
