@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+</head>
+<body>
+    <script>
+        let client = "John";
+
+        const groceries = 
+        {
+            fruits : ["pear", "apple", "banana"],
+            vegetables: ["tomatoes", "cucumber", "salad"],
+            totalPrice : "20$",
+            other : 
+            {
+                paid : true,
+                meansOfPayment : ["cash", "creditCard"]
+            }
+        }
+        //console.log(groceries.fruits[0]);
+        //Create an arrow function named displayGroceries, that console.logs the 3 fruits from the groceries object. 
+        // Use the forEach method.
+        let displayGroceries = () =>
+        {
+            let fruits = groceries.fruits;
+            //console.log(fruits);
+            fruits.forEach(function(fruitName)
+            {
+                console.log(fruitName)
+            })
+        };
+        displayGroceries();
+
+        //Create another arrow function named cloneGroceries.
+        let cloneGroceries = () =>
+        {
+            let user = client;
+            //Change the client variable to “Betty”.
+            client = 'Betty';
+            //Will we also see this modification in the user variable ? Why ? No, pass by value
+
+            //Change the value of the totalPrice key to 35$. 
+            let shopping = groceries;
+            groceries.totalPrice = "35$";
+
+            //Will we also see this modification in the shopping object ? Why ? yes, pass by reference
+
+            //Change the value of the paid key to false
+            //console.log(groceries.other.paid);
+            groceries.other.paid = false;
+            //Will we also see this modification in the shopping object ? Why ? yes, pass by reference
+            //console.log(shopping);
+        }
+        cloneGroceries();
+    </script>
+</body>
+</html>
