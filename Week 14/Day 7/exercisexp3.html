@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a global variable that save the amount of money you have in your account
+        var accountSavings = 50000;
+
+        //Create a variable that saves the amount of VAT
+        const vat = 0.15;
+        
+        //Create a variable that saves the amout of all the expenses and revenu you did /received for the past last month
+        let expenseRevenue = [2000, 3000, -150, -300];
+
+        //Create a JS code that multiplies of the expenses by the VAT
+
+        for (let i = 0; i < expenseRevenue.length; i++)
+        {
+            if(expenseRevenue[i] < 0)
+            {
+                expenseRevenue[i] = expenseRevenue[i] * vat;
+            }
+        }
+        
+        //Create a JS code that changes the amount of the money you have in your account depending on your expenses/revenu.
+       for (let i = 0; i < expenseRevenue.length; i++) 
+       {
+         accountSavings += expenseRevenue[i];
+       }
+
+    </script>
+</body>
+</html>
