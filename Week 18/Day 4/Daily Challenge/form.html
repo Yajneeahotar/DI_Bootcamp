@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM</title>
+</head>
+<body>
+    <form>
+        <input type = 'text' id = 'firstName' name="firstName">
+        <input type = 'text'  id = 'lastName' name="lastName">
+        <input type="submit" id ='button' value="Send">
+    </form>
+
+    <script>
+        let button = document.getElementById('button');
+
+        button.addEventListener('click', buttonFunction);
+
+        let firstName;
+        let lastName;
+
+        function buttonFunction()
+        {
+            event.preventDefault();
+            firstName = document.getElementById('firstName').value;
+            lastName = document.getElementById('lastName').value;       
+            //console.log(firstName);
+            //console.log(lastName);
+
+            let body = document.getElementsByTagName('body');
+            let newPara = document.createElement('p');
+            body[0].appendChild(newPara);
+            
+            let object = {
+                            name : firstName,
+                            lastName : lastName
+
+                         };
+            newPara.textContent =  JSON.stringify(object);
+        }
+
+
+
+    </script>
+</body>
+</html>
