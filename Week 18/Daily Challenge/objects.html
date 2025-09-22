@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Objects</title>
+</head>
+<body>
+    <script>
+        class Video
+        {
+            constructor(title, uploader, time)
+            {
+                this.title = title;
+                this.uploader = uploader;
+                this.time = time;
+            }
+            watch()
+            {
+                console.log(this.uploader + " watched all " + this.time + " of " + this.title + " !")
+            }
+        }
+
+        let video1 = new Video ('The Discovery of Pluto', 'Ben', '60');
+        //video1.watch();
+
+        let video2 = new Video('The Discovery of Saturn', 'Yajnee', '60');
+        //video2.watch();
+
+        let videoArray = [
+                            {
+                                title : 'The Discovery of Pluto',
+                                uploader : 'Ben',
+                                time : '60'
+                            },
+
+                            {   
+                                title : 'The Discovery of Saturn',
+                                uploader : 'Yajnee',
+                                time : '60'
+                            },
+
+                            {   
+                                title : 'The Discovery of Mercury',
+                                uploader : 'Tom',
+                                time : '60'
+                            },
+
+                            {   
+                                title : 'The Discovery of Venus',
+                                uploader : 'Sam',
+                                time : '60'
+                            },
+
+                            {   
+                                title : 'The Discovery of Jupiter',
+                                uploader : 'John',
+                                time : '60'
+                            }
+                        ];
+        
+        
+        let videoInstance;
+        for(let i = 0; i < videoArray.length; i++)
+        {
+            videoInstance = new Video(videoArray[i].title, videoArray[i].uploader, videoArray[i].time);
+            videoInstance.watch();
+        }
+        
+
+    </script>
+</body>
+</html>
