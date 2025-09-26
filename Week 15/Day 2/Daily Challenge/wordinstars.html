@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words in Stars</title>
+</head>
+<body>
+    <script>
+        let userWords = "";
+        let userWordsTrim = "";
+        let arrayWords = [];
+        let longestString = 0;
+        let stars = "****";
+
+        userWords = prompt("Please enter some words separated by commas");
+       console.log(userWords);
+        userWordsTrim = userWords.replaceAll(" ", "");
+        arrayWords = userWordsTrim.split(",");
+
+        for(let i = 0; i < arrayWords.length; i++)
+        {
+            if(arrayWords[i].length > longestString)
+            {
+                longestString = arrayWords[i].length;
+            }
+        }
+        console.log(longestString);
+
+
+        for(let i = 0; i < longestString; i++)
+        {
+            stars += "*";
+        }
+        console.log(stars);
+
+
+
+        for(i = 0; i < arrayWords.length; i++)
+        { 
+            console.log("* " + arrayWords[i].padEnd(longestString) + " *");
+
+        }
+        console.log(stars);
+        
+    </script>
+</body>
+</html>
