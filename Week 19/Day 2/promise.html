@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        //Create a promise that resolves itself in 4 seconds and returns a “success” string.
+        let promise1 = new Promise(function(resolve,reject)
+        {
+            setTimeout(() => 
+            {
+                resolve("success")
+            } , 4000);
+                
+        })
+
+        promise1.then(function(value)
+        {
+            console.log(value);
+        }       
+    )
+        //console.log(promise1);
+    </script>
+</body>
+</html>

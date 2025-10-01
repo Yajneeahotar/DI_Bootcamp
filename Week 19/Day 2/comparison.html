@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison</title>
+</head>
+<body>
+    <script>
+
+        let number = prompt("Enter a number")
+        let compareToTen = new Promise(function(resolve, reject)
+            {
+                if (number <= 10)
+                {
+                    resolve("Number is less or equal to 10");
+                }
+                else
+                {
+                    reject("Number is greater than 10")
+                }
+            });
+
+        compareToTen.then(function(value)
+        {
+            console.log(value);
+        }       
+        );
+
+        compareToTen.catch(function(value)
+        {
+            console.log(value);
+        }   
+        );
+        console.log(compareToTen);
+        
+
+
+    
+    
+    </script>
+</body>
+</html>
