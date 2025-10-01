@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge 1</title>
+</head>
+<body>
+    <script>
+       /* let arrayWords = ["apple", "banana", "4"];
+        let arrayOfWords2 = ["pear", "orange", 4]
+        //let arrayUppercase = array.map(value => value.toUpperCase())
+        //create function with parameter of type array.
+        //
+        
+        let makeAllCaps = new Promise(function(resolve, reject)
+        {
+           if(arrayWords.every(checkString))
+           {
+                resolve("it is a string");
+           }
+           else
+           {
+                reject("it is not a string");
+           }
+        });
+
+        makeAllCaps.then(function(value)
+        {
+            console.log(value)
+        });
+
+        makeAllCaps.catch(function(value)
+        {
+            console.log(value)
+        });
+        
+        
+        function checkString(arrayWords)       
+        {
+            return typeof(arrayWords) == "string";
+        }
+        //console.log(arrayOfWords2.every(makeAllCaps));*/
+
+
+
+        let uppercaseWords = ['CAT', 'DOG', 'BOY', 'GIRL'];
+
+        let sortWords = new Promise(function(resolve, reject)
+        {
+            if (uppercaseWords.length > 4)
+        {
+            resolve(uppercaseWords.sort());
+        }
+        else
+        {
+            reject("Array length not bigger than 4")
+        }
+        });
+
+        sortWords.then(function(value)
+        {
+            console.log(value);
+        });
+
+        sortWords.catch(function(value)
+        {
+            console.log(value);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       // console.log(arrayOfWords);
+                /*if(typeof(value) == "string")
+                {
+                    console.log("Yes " + value)
+                }
+                else
+                {
+                    console.log("No " + value)
+                }
+
+
+                //console.log(typeof(value))
+            });*/
+        
+        //makeAllCaps(arrayOfWords)
+        /*function makeAllCaps (arrayWords)
+        {
+           
+        
+        
+        )
+          
+
+            if()
+            {
+                
+            }
+        }*/
+
+
+
+        /*function makeAllCaps(array)
+        { 
+            new Promise((resolve,reject) => 
+            {
+                if(array = 'string')
+                {
+                    resolve(arrayUppercase);
+                }
+                })
+        }*/
+
+
+
+
+
+    </script>
+</body>
+</html>

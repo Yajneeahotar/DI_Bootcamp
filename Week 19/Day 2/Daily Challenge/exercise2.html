@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const morse = `{
+  "0": "-----",
+  "1": ".----",
+  "2": "..---",
+  "3": "...--",
+  "4": "....-",
+  "5": ".....",
+  "6": "-....",
+  "7": "--...",
+  "8": "---..",
+  "9": "----.",
+  "a": ".-",
+  "b": "-...",
+  "c": "-.-.",
+  "d": "-..",
+  "e": ".",
+  "f": "..-.",
+  "g": "--.",
+  "h": "....",
+  "i": "..",
+  "j": ".---",
+  "k": "-.-",
+  "l": ".-..",
+  "m": "--",
+  "n": "-.",
+  "o": "---",
+  "p": ".--.",
+  "q": "--.-",
+  "r": ".-.",
+  "s": "...",
+  "t": "-",
+  "u": "..-",
+  "v": "...-",
+  "w": ".--",
+  "x": "-..-",
+  "y": "-.--",
+  "z": "--..",
+  ".": ".-.-.-",
+  ",": "--..--",
+  "?": "..--..",
+  "!": "-.-.--",
+  "-": "-....-",
+  "/": "-..-.",
+  "@": ".--.-.",
+  "(": "-.--.",
+  ")": "-.--.-"
+}`
+
+
+let jSObject;
+let toJs = () =>
+{
+   return new Promise(function(resolve, reject)
+    {
+        jSObject = JSON.parse(morse);
+
+        if(Object.keys(jSObject).length === 0)
+        {
+            reject("Error: Object is empty")
+        }
+        else
+        {
+            resolve (jSObject);
+        }
+    });
+}
+
+let toMorse = (morseJS) =>
+{
+    let userInput = prompt("Enter a word or  a sentence");
+    return new Promise(function(resolve, reject)
+    {
+        let morseArray = [];
+        //console.log("Inn promise " + userInput)
+        for(let i = 0; i < userInput.length; i++)
+            {          
+                if(userInput[i] in morseJS )
+                {
+                    morseArray.push(morseJS[userInput[i]]);
+                }
+
+                else
+                {
+                    reject ("Error");
+                }
+            }
+            resolve (morseArray); 
+    });
+}
+
+function joinWords(morseTranslation) 
+{
+    // Join with line breaks and display on the page
+    document.body.innerHTML += "<pre>" + morseTranslation.join('\n') + "</pre>";
+}
+
+// Chain the functions
+toJs()
+  .then(morseJS => toMorse(morseJS))
+  .then(morseArray => joinWords(morseArray))
+  .catch(error => 
+  {
+    alert(error);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//console.log(Object.keys(jSObject));
+
+/*toJs.then(function(value)
+{
+    console.log(value);
+});
+
+toJs.catch(function(value)
+{
+    console.log(value);
+});
+*/
+
+/*let userInput = prompt("Enter a word or  a sentence");
+
+let toMorse  = new Promise(function(resolve, reject)
+{
+    let morseTranslation = [];
+    //console.log("Inn promise " + userInput)
+    for(let i = 0; i < userInput.length; i++)
+        {
+        
+            if(userInput[i] in jSObject )
+            {
+                morseTranslation.push(jSObject[userInput[i]]);
+            }
+
+            else
+            {
+                reject ("Error");
+            }
+
+        }
+        resolve (morseTranslation); 
+})
+toMorse.then(function(value)
+{
+    console.log(value);
+});
+
+toMorse.catch(function(value)
+{
+    console.log(value);
+});*/
+
+
+
+
+    </script>
+</body>
+</html>
