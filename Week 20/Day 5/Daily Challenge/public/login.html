@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In Form</title>
+</head>
+<body>
+    <!--User Log In Form-->
+    <form action="/loggedin" method="GET">
+        <label for="UserName"><b>Username</b></label>
+        <input type="text" placeholder="Enter your Username" name ="userName" id = "user_name" required>
+        <br><br>
+
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name ="password" id = "pass_word" required>
+        <br><br>
+
+        <input type="submit" value="Log In" id = "log_in" disabled>
+    </form>
+
+    <script src="login.js"></script>
+</body>
+</html>
