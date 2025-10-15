@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Guessing Game</title>
+   
+</head>
+<body>
+    <h1>Emoji Guessing Game</h1>
+    <h3>Choose only one answer for each.</h3>  
+    <p>What is this emoji?</p>
+    <p id = "emoji">😀</p>
+    <form onsubmit="checkanswer(event)">
+        <input type = "radio" value = "smile" name = "Answer" id = "option1">
+        <label for = "option1">smile</label><br>
+        <input type = "radio" value = "dog" name = "Answer" id = "option2">
+        <label for = "option2">dog</label><br>
+        <input type = "radio" value = "cry" name = "Answer" id = "option3">
+        <label for = "option3">cry</label>
+        <br>
+        <br>
+        <input type = "Submit" value = "Submit"></input>
+    </form>
+     <script>
+        function checkanswer(event)
+        {
+            event.preventDefault();
+            let formTag = document.getElementsByTagName('form');
+            let data = 
+            {
+                "emoji" : document.getElementById('emoji').innerHTML,
+                "chosenanswer" : formTag[0].Answer.value             
+            }
+
+            fetch("/api/checkanswer",{
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            .then((data) => data.json())
+            .then(data => 
+            {
+                alert(JSON.stringify(data));
+
+                 fetch("/api/quizquestions")
+                .then(function(data) 
+                {
+                    return data.json()
+                })
+                .then(function(obj)
+                {
+                    console.log(obj)
+                    document.getElementById('emoji').innerHTML = obj.emoji;
+
+                    document.getElementsByTagName('input')[0].value = obj.answers[0];
+                    document.getElementsByTagName('label')[0].innerHTML = obj.answers[0];
+
+                    document.getElementsByTagName('input')[1].value = obj.answers[1];
+                    document.getElementsByTagName('label')[1].innerHTML = obj.answers[1];
+
+                    document.getElementsByTagName('input')[2].value = obj.answers[2];
+                    document.getElementsByTagName('label')[2].innerHTML = obj.answers[2];
+                })
+            })
+        }
+
+
+
+      
+
+
+       /* fetch('/api/quizquestions')
+        .then(function(data)
+        {
+           return data.json() 
+        })
+        .then(function(obj)
+        {
+            console.log(obj)
+            document.getElementById("emoji").innerHTML = obj.emoji;
+            document.getElementById("option1").value = obj.answers[0];
+        })*/
+    
+    </script>
+
+
+</body>
+</html>
