@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This is  MY APP
+</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   <table border="1">
+
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Created Date</th>
+    <th>Due Date</th>
+    <th>Completed</th>
+    <th>Actions</th>
+
+</tr>
+
+{% for task in tasks %}
+<tr>
+    <td>{{ task.title }}</td>
+    <td>{{ task.description}}</td>
+    <td>{{ task.created_date}}</td>
+    <td>{{ task.due_date}}</td>
+    <td>{{ task.completed}}</td>
+     <td> 
+        <a href="{% url 'deletetask' task.pk %}">Delete</a>
+        <a href="{% url 'updatetask' task.pk%}">Edit</a>
+    </td>
+</tr>
+
+
+{% endfor %}
+
+</table>
+</body>
+</html>
