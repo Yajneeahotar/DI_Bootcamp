@@ -1,9 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head><title>This is my Task Manager</title></head>
+<head>
+    <title>This is my Task Manager</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 <body>
     <h1>{{ action }} Post</h1>
-        <form method="post">
+        <form method="post" class="task-form">
             {% csrf_token %}
             <label>Title<br>
             <input type="text" name="title" value="{{ task.title }}" required>

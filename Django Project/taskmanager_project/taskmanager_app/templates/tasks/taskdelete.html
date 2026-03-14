@@ -1,12 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-<head><title>This is  MY APP</title></head>
-<body>
+<head>
+    <title>This is  MY APP</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<!--body>
     <h1>Delete "{{ task_delete.title}}"?</h1>
         <form method="post">
             {% csrf_token %}
             <button type="submit">Yes, delete</button>
             <a href="{% url 'tasklist' %}">Cancel</a>
         </form>
+</body-->
+
+
+<body class="delete-page">
+
+<div class="delete-container">
+
+<h1>Delete "{{ task_delete.title }}"?</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <button type="submit" class="btn-delete">Yes, delete</button>
+
+    <a href="{% url 'tasklist' %}" class="btn-cancel">Cancel</a>
+
+</form>
+
+</div>
+
 </body>
 </html>
